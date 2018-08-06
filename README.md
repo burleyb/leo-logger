@@ -42,6 +42,25 @@ If you want to display logs for certain namespaces only, you can adjust LEO_LOGG
 export LEO_LOGGER='/my\-special\-namespace/a'
 ```
 
+You may notice in the previous example how it appears we’re using regex. This allows you to employ more powerful namespace logging.
+As an example, let’s say you have a shopping cart, and you want to have logs specific to the checkout process.
+Each of the checkout pages would include the leo-logger. I'm going to use an example of 2 checkout pages, which would look like this:
+```javascript
+const logger = require('leo-logger')('checkout-payment');
+```
+```javascript
+const logger = require('leo-logger')('checkout-process-order');
+```
+
+Then if you want to display logs for the process-order page, you would do this:
+```bash
+export LEO_LOGGER='/checkout\-process\-order/a'
+```
+But if you want to display logs for all checkout pages, you can use the power of regex:
+```bash
+export LEO_LOGGER='/checkout.*/a'
+```
+
 ### Loggers
 ```javascript
 logger.log('my logged message');
