@@ -56,7 +56,7 @@ Then if you want to display logs for the process-order page, you would do this:
 ```bash
 export LEO_LOGGER='/checkout\-process\-order/a'
 ```
-But if you want to display logs for all checkout pages, you can use the power of regex:
+But if you want to display logs for all checkout pages, you can use the power of regex to select everything starting with “checkout”:
 ```bash
 export LEO_LOGGER='/checkout.*/a'
 ```
