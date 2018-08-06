@@ -22,7 +22,24 @@ Such an awesome logger that we had to break it out from the LEO SDK and make it 
 
 ## Usage example:
 ```bash
-export LEO_LOGGER='/.*/tide'
+export LEO_LOGGER='/.*/d'
+```
+
+## Working with namespaces
+You can log logs for specific namespaces by passing a string when requiring the leo-logger. Example:
+```javascript
+const logger = require('leo-logger')('my-special-namespace');
+```
+When you use a namespace, logging works the same, but the output will be prefixed with the namespace:
+```javascript
+logger.log('My namespaced log');
+// outputs: my-special-namespace my namespaced log
+```
+
+If you want to display logs for certain namespaces only, you can adjust LEO_LOGGER to match the namespace.
+```bash
+# Example outputting all logs for my-special-namespace
+export LEO_LOGGER='/my\-special\-namespace/a'
 ```
 
 ### Loggers
