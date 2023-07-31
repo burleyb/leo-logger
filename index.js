@@ -117,7 +117,7 @@ if (process.env.LEO_LOGGER) {
 				j: "json"
 			};
 
-			if (parts.length == 1 && parts[0]) {
+			if (parts.length == 1 && parts[0] == '') {
 				return;
 			}
 			if (parts.length == 1) {
